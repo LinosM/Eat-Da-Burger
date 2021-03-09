@@ -1,14 +1,52 @@
+body {
+  background-color: #f58d42;
+}
 
-.label {
+button {
+  filter: drop-shadow(0 0 0.25rem black);
+}
+
+.title {
+  font-family: 'Indie Flower', cursive;
   font-weight: bold;
+  font-size: 60px;
+}
+
+.list-group-item {
+  border: 3px solid #F54251;
+}
+
+.devoured {
+  margin-left: auto; 
+  margin-right: 0;
+}
+
+header {
+  display: block;
+  padding: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+#burger_image {
+  width: 300px;
+}
+
+.addBurger {
+  margin: auto;
+  width: 50%;
+  text-align: center;
 }
 
 .form-group {
   margin-bottom: 5px;
 }
 
-.col-sm-3 {
+.burgerbtn {
   text-align: right;
+  font-size: 12px;
+  font-weight: bold;
 }
 
 .burger_name {
