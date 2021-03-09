@@ -7,7 +7,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
   // UPDATE
   const changeEatBtn = document.querySelectorAll('.change-devour');
 
-  // Set up the event listener for the create button
   if (changeEatBtn) {
     changeEatBtn.forEach((button) => {
       button.addEventListener('click', (e) => {
@@ -28,7 +27,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
           body: JSON.stringify(newEatenState),
         }).then((response) => {
           // Check that the response is all good
-          // Reload the page so the user can see the new quote
+          // Reload the page so the user can see the new burger
           if (response.ok) {
             location.reload('/');
           } else {
@@ -37,13 +36,14 @@ document.addEventListener('DOMContentLoaded', (event) => {
         });
       });
     });
-  }
+  };
 
   // CREATE
-  const createCatBtn = document.getElementById('create-form');
+  const createBurgerBtn = document.getElementById('create-form');
 
-  if (createCatBtn) {
-    createCatBtn.addEventListener('submit', (e) => {
+  // Set up the event listener for the create button
+  if (createBurgerBtn) {
+    createBurgerBtn.addEventListener('submit', (e) => {
       e.preventDefault();
 
       // Grabs the value of the textarea that goes by the name, "burger_name"
@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
         devoured: false,
       };
 
-      // Send POST request to create a new quote
+      // Send POST request to create a new burger
       fetch('/api/burgers', {
         method: 'POST',
         headers: {
@@ -71,5 +71,30 @@ document.addEventListener('DOMContentLoaded', (event) => {
         location.reload();
       });
     });
-  }
+  };
+
+  // DELETE
+  const deleteBurgerBtn = document.querySelectorAll('.delete-burger');
+
+
+  // Set up the event listener for the delete button
+  if (deleteBurgerBtn) {
+    deleteBurgerBtn.forEach((button) => {
+      button.addEventListener('click', (e) => {
+        // Grabs the id of the element that goes by the name, "id"
+        const id = e.target.getAttribute('data-id');
+        console.log(id);
+
+        // Sends delete request
+        fetch(`/api/burgers/${id}`, {
+          method: 'DELETE',
+        }).then((response) => {
+          console.log(response);
+          console.log(`Deleted burger: ${id}`);
+
+          location.reload();
+        });
+      });
+    });
+  };
 });
