@@ -1,0 +1,16 @@
+
+.label {
+  font-weight: bold;
+}
+
+.form-group {
+  margin-bottom: 5px;
+}
+
+.col-sm-3 {
+  text-align: right;
+}
+
+.burger_name {
+  word-break: break-all;
+}
