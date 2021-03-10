@@ -13,6 +13,12 @@ router.get('/', (req, res) => {
   });
 });
 
+router.get('/api/burgers', (req, res) => {
+  burger.selectAll((data) => {
+    res.json((data));
+  })
+})
+
 router.post('/api/burgers', (req, res) => {
   burger.insertOne(['burger_name', 'devoured'], [req.body.burger_name, req.body.devoured], (result) => {
     // Send back the ID of the new burger
