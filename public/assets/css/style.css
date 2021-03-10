@@ -14,11 +14,13 @@ button {
 
 .list-group-item {
   border: 3px solid #F54251;
+  margin-left: 0px;
 }
 
 .devoured {
   margin-left: auto; 
   margin-right: 0;
+  color: gray;
 }
 
 header {
