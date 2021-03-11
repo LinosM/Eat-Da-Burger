@@ -39,9 +39,9 @@ Navigating to `http://localhost:8080/api/burgers` will return a JSON of all the 
 
 ## Preview
 
-![preview1](./assets/preview1.png)
+![preview1](./assets/preview01.png)
 
-![preview2](./assets/preview2.png)
+![preview2](./assets/preview02.png)
 
 ## Deployed Application
 
